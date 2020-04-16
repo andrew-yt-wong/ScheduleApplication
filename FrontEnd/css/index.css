@@ -1,0 +1,50 @@
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	text-align: center;
+	background-color: #2D3047;
+	color: white;
+	font-family: 'Unica One', cursive;
+}
+form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20px;
+}
+input[type=text], input[type=password] {
+	background-color: #D3E1F1;
+	border: none;
+	height: 35px;
+	width: 300px;
+	padding: 0px 20px;
+	margin-top: 30px;
+	color: black;
+}
+input[type=text]::placeholder, input[type=password]::placeholder {
+	color: black;
+}
+input[type=submit] {
+	width: 150px;
+	height: 40px;
+	background-color: #1B998B;
+	border: none;
+	margin-top: 30px;
+	cursor: pointer;
+	color: white;
+}
+.title {
+	font-size: 100px;
+}
+.intro {
+	font-family: 'Unica One', cursive;
+}
+@media (max-width: 767px) {
+	.title {
+		font-size: 75px;
+	}
+}

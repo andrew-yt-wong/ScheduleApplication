@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Schedule</title>
+	<link type="text/css" rel="stylesheet" href="themes/calendar_white.css" /> 
+</head>
+<body>
+	<div id="dp"></div> 
+	<script src="js/daypilot/daypilot-all.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		let dp = new DayPilot.Calendar("dp");
+		dp.viewType = "Week";
+		dp.theme = "calendar_white";
+		dp.init();
+	</script>
+</body>
+</html>
