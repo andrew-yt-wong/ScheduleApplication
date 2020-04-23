@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+	<style type="text/css">
+		html, body {
+			text-align: center;
+		}
+		.box {
+			/*border: 1px solid rgba(0, 0, 0, .5);*/
+			height: 50px;
+		}
+		.label {
+			/*border: 1px solid rgba(0, 0, 0, .5);*/
+			height: 50px;
+		}
+		.word {
+			width: 100%;
+			text-align: center;
+		}
+		#color{
+			width: 20px;
+			height: 20px;
+			border-radius: 50%;
+			background-color: #007BFF;
+		}
+		.color{
+			width: 20px;
+			height: 20px;
+			border-radius: 50%;
+			background-color: #007BFF;
+		}
+		.dropdown{
+			margin-left: 10px;
+		}
+		.dropdown-menu li{
+			padding: 10px 20px;
+			cursor: pointer;
+			display: flex;
+		}
+		.dropdown-menu li:hover{
+			background-color: rgba(0,0,0,0.05);
+		}
+		.new-event {
+			width: 200px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<div class="new-event">
+					<div class="row">
+						<input style="margin: 10px;" type="text" name="event-title" class="form-control" id="event-name" placeholder="Event Name">
+					</div>
+					<div class="row">
+						<div class="dropdown">
+							<button type="button" style="display: flex;align-items: center;background-color: rgba(0,0,0,0.05);" class="btn dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">
+								<div id="color"></div>
+								<span class="caret" style="margin-left: 10px;"></span>
+							</button>
+
+							<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+								<li class="colorpicker">
+									<div class="color" style="background-color: #007BFF;"></div><font>#007BFF</font>
+								</li>
+								<li class="colorpicker">
+									<div class="color" style="background-color: #138496;"></div><font>#138496</font>
+								</li>
+
+								<li class="colorpicker">
+									<div class="color" style="background-color: #CE8483;"></div><font>#CE8483</font>
+								</li>
+								<li class="colorpicker">
+									<div class="color" style="background-color: #EEA236;"></div><font>#EEA236</font>
+								</li>
+							</ul>
+						</div>
+						<div class="dropdown">
+							<button type="button" style="display: flex;align-items: center;background-color: rgba(0,0,0,0.05);" class="btn dropdown-toggle" id="dropdownMenu2" data-toggle="dropdown">
+								<div><span id="time">1</span> Hour</div>
+								<span class="caret" style="margin-left: 10px;"></span>
+							</button>
+
+							<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu2">
+								<li class="timepicker">
+									<font>0.5</font> Hour
+								</li>
+								<li class="timepicker">
+									<font>1</font> Hour
+								</li>
+
+								<li class="timepicker">
+									<font>1.5</font> Hour
+								</li>
+								<li class="timepicker">
+									<font>2</font> Hour
+								</li>
+								<li class="timepicker">
+									<font>2.5</font> Hour
+								</li>
+								<li class="timepicker">
+									<font>3</font> Hour
+								</li>
+								<li class="timepicker">
+									<font>3.5</font> Hour
+								</li>
+								<li class="timepicker">
+									<font>4</font> Hour
+								</li>
+								<li class="timepicker">
+									<font>4.5</font> Hour
+								</li>
+								<li class="timepicker">
+									<font>5</font> Hour
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col times">
+				<div class="row label">
+					<div class="word">Time</div>
+				</div>
+			</div>
+			<div class="col day" id="sunday-column">
+				<div class="row label">
+					<div class="word">Sunday</div>
+				</div>
+			</div>
+			<div class="col day" id="monday-column">
+				<div class="row label">
+					<div class="word">Monday</div>
+				</div>
+			</div>
+			<div class="col day" id="tuesday-column">
+				<div class="row label">
+					<div class="word">Tuesday</div>
+				</div>
+			</div>
+			<div class="col day" id="wednesday-column">
+				<div class="row label">
+					<div class="word">Wednesday</div>
+				</div>
+			</div>
+			<div class="col day" id="thursday-column">
+				<div class="row label">
+					<div class="word">Thursday</div>
+				</div>
+			</div>
+			<div class="col day" id="friday-column">
+				<div class="row label">
+					<div class="word">Friday</div>
+				</div>
+			</div>
+			<div class="col day" id="saturday-column">
+				<div class="row label">
+					<div class="word">Saturday</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+	<script type="text/javascript">
+		let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+		let hours = ["5 AM", "6 AM", "7 AM", "8 AM", "9 AM", "10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM", "6 PM", "7 PM", "8 PM", "9 PM", "10 PM", "11 PM", "12 AM", "1 AM", "2 AM", "3 AM", "4 AM"];
+		function startUpInitialization() {
+			for (let i = 0; i < 24; ++i) {
+				let empty = document.createElement("div");
+				empty.classList.add("row");
+				empty.classList.add("box");
+				$(".day").append(empty);
+
+				let hour = document.createElement("div");
+				hour.classList.add("row");
+				hour.classList.add("label");
+				let word = document.createElement("div");
+				word.classList.add("word");
+				word.innerHTML = hours[i];
+				hour.appendChild(word);
+				document.querySelector(".times").appendChild(hour);
+			}
+		}
+		startUpInitialization();
+
+		$(".box").on("mouseenter", function() {
+			$(this).css("background", "grey");
+		});
+		$(".box").on("mouseleave", function() {
+			$(this).css("background", "white");
+		});
+		$(".box").on("click", function() {
+			if (!this.hasChildNodes()) {
+				let newEvent = document.createElement("div");
+				if ($("#event-name").val() == "")
+					newEvent.innerHTML = "New Event";
+				else
+					newEvent.innerHTML = $("#event-name").val();
+				newEvent.style.backgroundColor = $("#color").css("backgroundColor");
+				newEvent.style.width = "100%";
+				newEvent.style.height = (100 * parseFloat($("#time").html())).toString() + "%";
+				newEvent.style.borderRadius = "7px";
+				newEvent.style.border = "1px solid white";
+				this.appendChild(newEvent);
+			}
+		});
+		$(".colorpicker").on("click", function() {
+			$("#color").css("background-color", $(".colorpicker font").eq($(".colorpicker").index(this)).html());
+		});
+		$(".timepicker").on("click", function() {
+			$("#time").html($(".timepicker font").eq($(".timepicker").index(this)).html());
+		});
+	</script>
+
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
