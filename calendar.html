@@ -37,6 +37,11 @@
 		.dropdown{
 			margin-left: 10px;
 		}
+		.event-time {
+			width: 25%;
+			margin-left: 10px;
+			margin-right: 10px;
+		}
 		.dropdown-menu li{
 			padding: 10px 20px;
 			cursor: pointer;
@@ -67,7 +72,19 @@
 
 							<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
 								<li class="colorpicker">
-									<div class="color" style="background-color: #007BFF;"></div><font>#007BFF</font>
+									<div class="color" style="background-color: red;"></div><font>Red</font>
+								</li>
+								<li class="colorpicker">
+									<div class="color" style="background-color: orange;"></div><font>Orange</font>
+								</li>
+								<li class="colorpicker">
+									<div class="color" style="background-color: yellow;"></div><font>Yellow</font>
+								</li>
+								<li class="colorpicker">
+									<div class="color" style="background-color: green;"></div><font>Green</font>
+								</li>
+								<li class="colorpicker">
+									<div class="color" style="background-color: #007BFF;"></div><font>Blue</font>
 								</li>
 								<li class="colorpicker">
 									<div class="color" style="background-color: #138496;"></div><font>#138496</font>
@@ -81,7 +98,12 @@
 								</li>
 							</ul>
 						</div>
-						<div class="dropdown">
+
+						<div class="event-time">
+							<input type="text" name="event-length" class="form-control" id="event-length" placeholder="1.5">
+						</div>
+						Hour
+						<!-- <div class="dropdown">
 							<button type="button" style="display: flex;align-items: center;background-color: rgba(0,0,0,0.05);" class="btn dropdown-toggle" id="dropdownMenu2" data-toggle="dropdown">
 								<div><span id="time">1</span> Hour</div>
 								<span class="caret" style="margin-left: 10px;"></span>
@@ -120,7 +142,7 @@
 									<font>5</font> Hour
 								</li>
 							</ul>
-						</div>
+						</div> -->
 					</div>
 				</div>
 			</div>
@@ -193,6 +215,7 @@
 
 		$(".box").on("mouseenter", function() {
 			$(this).css("background", "grey");
+			$(this).css("border-radius", "7px");
 		});
 		$(".box").on("mouseleave", function() {
 			$(this).css("background", "white");
