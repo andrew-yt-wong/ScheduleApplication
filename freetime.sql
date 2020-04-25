@@ -39,3 +39,11 @@ CREATE TABLE User_Has_Friends (
     FOREIGN KEY user(user_id) REFERENCES Users(user_id),
     FOREIGN KEY friend(friend_id) REFERENCES Users(user_id)
 );
+
+CREATE TABLE User_Has_Friend_Requests (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT,
+    friend_id INT,
+    FOREIGN KEY user(user_id) REFERENCES Users(user_id),
+    FOREIGN KEY friend(friend_id) REFERENCES Users(user_id)
+);

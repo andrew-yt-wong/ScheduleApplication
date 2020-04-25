@@ -6,6 +6,10 @@
 	<title></title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
+	<link href="https://fonts.googleapis.com/css2?family=Unica+One&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
 	<style type="text/css">
 		html, body {
 			text-align: center;
@@ -38,7 +42,7 @@
 			margin-left: 10px;
 		}
 		.event-time {
-			width: 25%;
+			width: 56%;
 			margin-left: 10px;
 			margin-right: 10px;
 		}
@@ -53,10 +57,48 @@
 		.new-event {
 			width: 200px;
 		}
+		.header {
+			width: 90%;
+			margin-top: 1%;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		#logo {
+			font-family: 'Unica One', cursive;
+			font-size: 30px;
+		}
 	</style>
 </head>
 <body>
-	<div class="container">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="header">
+				<nav class="navbar navbar-expand-md navbar-light">
+					<a class="navbar-brand" id="logo" href="">FreeTime</a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav ml-auto mynavbar">
+							<li class="nav-item active">
+								<a class="nav-link" href="">Schedule</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="">Friends</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="">Combine</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="">Logout</a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<hr/>
 		<div class="row">
 			<div class="col">
 				<div class="new-event">
@@ -72,77 +114,35 @@
 
 							<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
 								<li class="colorpicker">
-									<div class="color" style="background-color: red;"></div><font>Red</font>
+									<div class="color" style="background-color: #CE8483;"></div>&nbsp;&nbsp;Pink<font style="display: none;">#CE8483</font>
 								</li>
 								<li class="colorpicker">
-									<div class="color" style="background-color: orange;"></div><font>Orange</font>
+									<div class="color" style="background-color: red;"></div>&nbsp;&nbsp;Red<font style="display: none;">red</font>
 								</li>
 								<li class="colorpicker">
-									<div class="color" style="background-color: yellow;"></div><font>Yellow</font>
+									<div class="color" style="background-color: #FF6666;"></div>&nbsp;&nbsp;Sunset<font style="display: none;">#FF6666</font>
 								</li>
 								<li class="colorpicker">
-									<div class="color" style="background-color: green;"></div><font>Green</font>
+									<div class="color" style="background-color: orange;"></div>&nbsp;&nbsp;Orange<font style="display: none;">orange</font>
 								</li>
 								<li class="colorpicker">
-									<div class="color" style="background-color: #007BFF;"></div><font>Blue</font>
+									<div class="color" style="background-color: yellow;"></div>&nbsp;&nbsp;Yellow<font style="display: none;">yellow</font>
 								</li>
 								<li class="colorpicker">
-									<div class="color" style="background-color: #138496;"></div><font>#138496</font>
-								</li>
-
-								<li class="colorpicker">
-									<div class="color" style="background-color: #CE8483;"></div><font>#CE8483</font>
+									<div class="color" style="background-color: green;"></div>&nbsp;&nbsp;Green<font style="display: none;">green</font>
 								</li>
 								<li class="colorpicker">
-									<div class="color" style="background-color: #EEA236;"></div><font>#EEA236</font>
+									<div class="color" style="background-color: #138496;"></div>&nbsp;&nbsp;Aquamarine<font style="display: none;">#138496</font>
+								</li>
+								<li class="colorpicker">
+									<div class="color" style="background-color: #007BFF;"></div>&nbsp;&nbsp;Blue<font style="display: none;">#007BFF</font>
 								</li>
 							</ul>
 						</div>
 
 						<div class="event-time">
-							<input type="text" name="event-length" class="form-control" id="event-length" placeholder="1.5">
+							<input type="text" name="event-length" class="form-control" id="event-length" placeholder="1.5 Hours">
 						</div>
-						Hour
-						<!-- <div class="dropdown">
-							<button type="button" style="display: flex;align-items: center;background-color: rgba(0,0,0,0.05);" class="btn dropdown-toggle" id="dropdownMenu2" data-toggle="dropdown">
-								<div><span id="time">1</span> Hour</div>
-								<span class="caret" style="margin-left: 10px;"></span>
-							</button>
-
-							<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu2">
-								<li class="timepicker">
-									<font>0.5</font> Hour
-								</li>
-								<li class="timepicker">
-									<font>1</font> Hour
-								</li>
-
-								<li class="timepicker">
-									<font>1.5</font> Hour
-								</li>
-								<li class="timepicker">
-									<font>2</font> Hour
-								</li>
-								<li class="timepicker">
-									<font>2.5</font> Hour
-								</li>
-								<li class="timepicker">
-									<font>3</font> Hour
-								</li>
-								<li class="timepicker">
-									<font>3.5</font> Hour
-								</li>
-								<li class="timepicker">
-									<font>4</font> Hour
-								</li>
-								<li class="timepicker">
-									<font>4.5</font> Hour
-								</li>
-								<li class="timepicker">
-									<font>5</font> Hour
-								</li>
-							</ul>
-						</div> -->
 					</div>
 				</div>
 			</div>
@@ -229,7 +229,7 @@
 					newEvent.innerHTML = $("#event-name").val();
 				newEvent.style.backgroundColor = $("#color").css("backgroundColor");
 				newEvent.style.width = "100%";
-				newEvent.style.height = (100 * parseFloat($("#time").html())).toString() + "%";
+				newEvent.style.height = (100 * parseFloat($("#event-length").val())).toString() + "%";
 				newEvent.style.borderRadius = "7px";
 				newEvent.style.border = "1px solid white";
 				this.appendChild(newEvent);
@@ -237,9 +237,6 @@
 		});
 		$(".colorpicker").on("click", function() {
 			$("#color").css("background-color", $(".colorpicker font").eq($(".colorpicker").index(this)).html());
-		});
-		$(".timepicker").on("click", function() {
-			$("#time").html($(".timepicker font").eq($(".timepicker").index(this)).html());
 		});
 	</script>
 
