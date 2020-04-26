@@ -6,14 +6,16 @@ USE FreeTime;
 CREATE TABLE Events (
 	event_id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(45) NOT NULL,
-    start_time TIME NOT NULL,
-    duration DOUBLE NOT NULL,
+    start_time VARCHAR(45) NOT NULL,
+    duration VARCHAR(45) NOT NULL,
     day VARCHAR(45) NOT NULL,
-    color VARCHAR(45) NOT NULL
+    color VARCHAR(45) NOT NULL,
+    username VARCHAR(45) NOT NULL
 );
 
 CREATE TABLE Schedules (
-	schedule_id INT PRIMARY KEY AUTO_INCREMENT
+	schedule_id INT PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR (45) NOT NULL
 );
 
 CREATE TABLE Schedule_Has_Events (
@@ -28,7 +30,7 @@ CREATE TABLE Users (
 	user_id INT PRIMARY KEY AUTO_INCREMENT,
     username VARCHAR(45) NOT NULL,
     password VARCHAR(256) NOT NULL,
-    schedule_id INT,
+    schedule_id INT NOT NULL,
     FOREIGN KEY sfk(schedule_id) REFERENCES Schedules(schedule_id)
 );
 
