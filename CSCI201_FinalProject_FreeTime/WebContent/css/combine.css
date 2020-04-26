@@ -1,0 +1,72 @@
+@charset "ISO-8859-1";
+
+html, body {
+	text-align: center;
+}
+body {
+	background-color: #2D3047;
+	color: white;
+	font-family: 'Unica One', cursive;
+	text-align: center;
+}
+.box {
+	/*border: 1px solid rgba(0, 0, 0, .5);*/
+	height: 50px;
+}
+.label {
+	/*border: 1px solid rgba(0, 0, 0, .5);*/
+	height: 50px;
+}
+.word {
+	width: 100%;
+	text-align: center;
+}
+#color{
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background-color: #007BFF;
+}
+.color{
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background-color: #007BFF;
+}
+.dropdown{
+	margin-left: 10px;
+}
+.event-time {
+	width: 56%;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.dropdown-menu li{
+	padding: 10px 20px;
+	cursor: pointer;
+	display: flex;
+}
+.dropdown-menu li:hover{
+	background-color: rgba(0,0,0,0.05);
+}
+.new-event {
+	margin-left: 50px;
+	width: 200px;
+}
+.header {
+	width: 90%;
+	margin-top: 1%;
+	margin-left: auto;
+	margin-right: auto;
+}
+#logo {
+	font-family: 'Unica One', cursive;
+	font-size: 30px;
+}
+[type=text] {
+	background-color: #D3E1F1;
+	color: black;
+}
+li {
+	text-align: left;
+}

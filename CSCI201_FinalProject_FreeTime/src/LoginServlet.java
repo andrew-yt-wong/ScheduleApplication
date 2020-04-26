@@ -1,8 +1,7 @@
 import java.io.IOException;
-
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,29 +15,37 @@ public class LoginServlet extends HttpServlet {
 	}
 	
 	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		String signinUser = request.getParameter("signin-username");
 		String signinPass = request.getParameter("signin-password");
+		String signinUserError = "";
+		String signinPassError = "";
+		String signinError = "";
 		
 		String next = "/index.jsp";
 		
 		if (signinUser == "") {
-			request.setAttribute("signinUserError", "Username was not filled in!");
+			signinUserError = "Username was not filled in!";
 		}
 		
 		if (signinPass == "") {
-			request.setAttribute("signinPassError", "Password was not filled in!");
+			signinPassError = "Password was not filled in!";
 		}
 		
-		if (request.getAttribute("signinUserError") == null &&
-			request.getAttribute("signinPassError") == null) {
+		if (signinUserError.equals("") &&
+			signinPassError.equals("")) {
 			boolean isUser = JDBCTest.verifyUser(signinUser, signinPass);
 			if (isUser)
+			{
 				next = "/schedule.jsp";
+				Cookie c = new Cookie("username", signinUser);
+				c.setMaxAge(1800);
+				response.addCookie(c);
+			}
 			else
-				request.setAttribute("signinError", "Unable to log in using those credentials!");
+				signinError = "Unable to log in using those credentials!";
 		}
 		
-		RequestDispatcher dispatch = getServletContext().getRequestDispatcher(next);
-		dispatch.forward(request,  response);
+		response.sendRedirect(request.getContextPath() + next + "?signin-username=" + signinUser + "&signin-password=" + signinPass + "&signinUserError=" + signinUserError + "&signinPassError=" + signinPassError + "&signinError=" + signinError);
 	}
 }

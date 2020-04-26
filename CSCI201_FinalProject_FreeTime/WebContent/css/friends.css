@@ -1,0 +1,35 @@
+@charset "ISO-8859-1";
+
+body {
+	background-color: #2D3047;
+	color: white;
+	font-family: 'Unica One', cursive;
+	text-align: center;
+}
+
+#logo {
+	font-family: 'Unica One', cursive;
+	font-size: 30px;
+}
+
+.header {
+	width: 90%;
+	margin-top: 1%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.friendpage {
+	width: 87%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.friends {
+	width: 33%;
+}
+
+[type=text] {
+	background-color: #D3E1F1;
+	color: black;
+}
